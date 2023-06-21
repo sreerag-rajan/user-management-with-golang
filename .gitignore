@@ -1,1 +1,30 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Output files
+*.o
+*.a
+*.out
+*.test
+*.prof
+
+# Ignore the build directory
+/build/
+
+# Ignore the vendor directory
+/vendor/
+
+# Ignore any generated files or directories
+/_generated/
+
+# Ignore operating system-specific files
+.DS_Store
+Thumbs.db
+
+
+# ENV
 .env
