@@ -8,5 +8,6 @@ This project is a POC on go. I am setting up a user management service which con
 
 To start the project
 ```shell
-go run main.go
+go mod download
+go run cmd/user-management/main.go
 ```
