@@ -23,12 +23,16 @@ type MongoDBConnection struct {
 	isConnectionSuccess bool
 }
 
+var DbConnection mongo.Database
+
 func NewMongoDBConnection(config *MongoDBConfig) (*MongoDBConnection, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 	clientOptions := options.Client().ApplyURI(config.ConnectionUrl)
 
 	client, err := mongo.Connect(ctx, clientOptions)
+
+	DbConnection = *client.Database(os.Getenv("DB_NAME"))
 
 	if err != nil {
 		return nil, err
@@ -56,13 +60,13 @@ func LoadConfig() {
 		ConnectionUrl: connectionUrl,
 	}
 
-	mongoConnection, err := NewMongoDBConnection(connConfig)
+	connection, err := NewMongoDBConnection(connConfig)
 
 	if err != nil {
 		log.Fatal("Mongo Connection Failed")
 	}
 
-	if mongoConnection.isConnectionSuccess {
+	if connection.isConnectionSuccess {
 		fmt.Println("MONGO DB SUCCESSFULLY CONNECTED")
 	}
 }

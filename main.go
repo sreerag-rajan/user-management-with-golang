@@ -15,6 +15,6 @@ func main() {
 	//Routes being imported from the routes folder
 	routes.Routes(r)
 
-	r.Run(":8001")
+	r.Run(":8009")
 
 }

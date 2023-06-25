@@ -7,3 +7,8 @@ type UserRoleModel struct {
 	Label string             `json:"lable,omitempty"`
 	Code  string             `json:"code,omitempty"`
 }
+
+type RolePayload struct {
+	Label string `json:"label"`
+	Code  string `json:"code"`
+}
