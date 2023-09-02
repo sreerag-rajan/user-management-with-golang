@@ -1,6 +1,6 @@
 ---
 id: tg663ajk6zknkshnhqvib44
-title: Table
+title: Model
 desc: ''
 updated: 1693673434554
 created: 1693673213634
